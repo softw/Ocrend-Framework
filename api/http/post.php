@@ -1,5 +1,8 @@
 <?php
-
+namespace Ocrend\Api\Http;
+use Ocrend\Core\Models\Register;
+use Ocrend\Core\Models\Login;
+use Ocrend\Core\Models\Lostpass;
 # Seguridad
 defined('INDEX_DIR') OR exit('Ocrend software says .i.');
 

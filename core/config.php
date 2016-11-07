@@ -55,8 +55,10 @@ define('__ROOT__', '/');
 //------------------------------------------------
 
 # Constantes fundamentales
-define('URL', 'ocrend.dev');
+define('URL', '/home');
 define('APP', 'Ocrend Framework');
+# el namespace donde se van a alojar los controladores
+define('CONTROLLERS_NS', 'App\Controllers\\');
 
 //------------------------------------------------
 

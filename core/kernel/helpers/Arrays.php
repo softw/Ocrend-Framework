@@ -1,5 +1,5 @@
 <?php
-
+namespace Ocrend\Core\Kernel\Helpers;
 # Seguridad
 defined('INDEX_DIR') OR exit('Ocrend software says .i.');
 

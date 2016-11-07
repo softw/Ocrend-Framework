@@ -1,5 +1,8 @@
 <?php
-
+namespace App\Controllers;
+use Ocrend\Core\Kernel\Controllers;
+use Ocrend\Core\Models\Lostpass;
+use Ocrend\Core\Models\Func;
 # Seguridad
 defined('INDEX_DIR') OR exit('Ocrend software says .i.');
 

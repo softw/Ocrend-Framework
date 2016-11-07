@@ -1,5 +1,7 @@
 <?php
-
+namespace Ocrend\Core\Models;
+use Ocrend\Core\Kernel\Models;
+use Ocrend\Core\Kernel\OCREND;
 # Seguridad
 defined('INDEX_DIR') OR exit('Ocrend software says .i.');
 

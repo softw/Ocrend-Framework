@@ -1,19 +1,7 @@
 <?php
-
+namespace Ocrend\Core\Kernel;
 # Seguridad
 defined('INDEX_DIR') OR exit('Ocrend software says .i.');
-
-//------------------------------------------------
-
-/**
-  * Interfaz implementada para TODOS los modelos sin excepción, que requieran interacción alguna con la base de datos
-*/
-interface OCREND {
-  public function __construct();
-  public function __destruct();
-}
-
-//------------------------------------------------
 
 abstract class Models {
 

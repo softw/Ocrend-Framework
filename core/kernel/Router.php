@@ -4,6 +4,10 @@
  * Licence MIT
  */
 
+namespace Ocrend\Core\Kernel;
+use Ocrend\Core\Kernel\Helpers\Strings;
+use Ocrend\Core\Kernel\Helpers\Arrays;
+
 # Seguridad
 
 defined('INDEX_DIR') OR exit('Ocrend software says .i.');
@@ -149,7 +153,6 @@ class Router {
   */
   public function getRoute(string $name) {
 
-    Helper::load('arrays');
     $index = Arrays::get_key_by_index($name,$this->routes);
 
     if(!is_array($this->url)) $this->url = array();

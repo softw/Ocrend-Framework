@@ -1,5 +1,5 @@
 <?php
-
+namespace Ocrend\Core\Models;
 # Seguridad
 defined('INDEX_DIR') OR exit('Ocrend software says .i.');
 
@@ -158,4 +158,4 @@ final class Func {
 
 }
 
-?>
+

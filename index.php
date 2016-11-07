@@ -12,7 +12,7 @@
 */
 
 //------------------------------------------------
-
+require('vendor/autoload.php');
 # Carga del núcleo
 define('INDEX_DIR',true);
 require('core/app_core.php');
@@ -20,22 +20,20 @@ require('core/app_core.php');
 //------------------------------------------------
 
 # Detección del controlador actual
-$Controller = $router->getController();
+$controller = $router->getController();
 
 //------------------------------------------------
 
 # Identificación del controlador en el sistema
-if(!is_readable('core/controllers/' . $Controller . '.php')) {
-  $Controller = 'errorController';
+if(!is_readable('app/controllers/' . $controller . '.php')) {
+  $controller = 'errorController';
 }
 
-# Carga del controlador seleccionado
-require('core/controllers/' . $Controller . '.php');
-new $Controller;
+$controllerName = CONTROLLERS_NS.$controller;
+new $controllerName();
 
 //------------------------------------------------
 
 # Modo debug
 !DEBUG ?: new Debug($startime);
 
-?>

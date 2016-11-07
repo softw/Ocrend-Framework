@@ -20,6 +20,6 @@ require('../core/kernel/Ocrend.php');
 require('../vendor/autoload.php');
 
 # Router para URL's amigables
-$router = new Router;
+$router = new \Ocrend\Core\Kernel\Router();
 
-?>
+

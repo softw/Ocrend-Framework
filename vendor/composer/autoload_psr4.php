@@ -8,6 +8,12 @@ $baseDir = dirname($vendorDir);
 return array(
     'Slim\\' => array($vendorDir . '/slim/slim/Slim'),
     'Psr\\Http\\Message\\' => array($vendorDir . '/psr/http-message/src'),
+    'Ocrend\\Views\\' => array($baseDir . '/views'),
+    'Ocrend\\Core\\Models\\' => array($baseDir . '/core/models'),
+    'Ocrend\\Core\\Kernel\\' => array($baseDir . '/core/kernel'),
+    'Ocrend\\Core\\' => array($baseDir . '/core'),
+    'Ocrend\\Api\\Http\\' => array($baseDir . '/api/http'),
+    'Ocrend\\Api\\' => array($baseDir . '/api'),
     'League\\Plates\\' => array($vendorDir . '/league/plates/src'),
     'League\\OAuth2\\Client\\' => array($vendorDir . '/league/oauth2-client/src', $vendorDir . '/league/oauth2-google/src'),
     'Interop\\Container\\' => array($vendorDir . '/container-interop/container-interop/src/Interop/Container'),
@@ -15,4 +21,5 @@ return array(
     'GuzzleHttp\\Promise\\' => array($vendorDir . '/guzzlehttp/promises/src'),
     'GuzzleHttp\\' => array($vendorDir . '/guzzlehttp/guzzle/src'),
     'FastRoute\\' => array($vendorDir . '/nikic/fast-route/src'),
+    'App\\Controllers\\' => array($baseDir . '/app/controllers'),
 );

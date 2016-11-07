@@ -1,5 +1,10 @@
 <?php
 
+namespace Ocrend\Core\Kernel;
+use League\Plates\Engine;
+use Ocrend\Core\Models\Func;
+use Ocrend\Core\Kernel\Helpers\Strings;
+use Ocrend\Core\Models\Sessions;
 # Seguridad
 defined('INDEX_DIR') OR exit('Ocrend software says .i.');
 
@@ -51,7 +56,7 @@ abstract class Controllers {
     }
 
     # Carga del template
-    $this->template = new League\Plates\Engine('templates','phtml');
+    $this->template = new Engine('templates','phtml');
 
     /*
     # Insertar por defecto, en TODOS los templates un elemento o más
@@ -73,4 +78,4 @@ abstract class Controllers {
 
 }
 
-?>
+

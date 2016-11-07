@@ -1,5 +1,8 @@
 <?php
-
+namespace Ocrend\Core\Models;
+use Ocrend\Core\Kernel\Models;
+use Ocrend\Core\Kernel\OCREND;
+use Ocrend\Core\Kernel\Helper;
 # Seguridad
 defined('INDEX_DIR') OR exit('Ocrend software says .i.');
 
@@ -23,18 +26,18 @@ final class Login extends Models implements OCREND {
       $this->u = $this->db->select('id,pass','users',"user='$this->user'",'LIMIT 1');
 
       if(false == $this->u or !Strings::chash($this->u[0][1],$data['pass'])) {
-        throw new Exception('<b>Error:</b> Credenciales incorrectas.');
+        throw new \Exception('<b>Error:</b> Credenciales incorrectas.');
       }
 
       if(DB_SESSION) {
         $this->session = new Sessions;
         if($this->session->session_in_use($this->u[0][0])) {
-          throw new Exception('<b>Error:</b> Ya tiene una sesión iniciada.');
+          throw new \Exception('<b>Error:</b> Ya tiene una sesión iniciada.');
         }
       }
 
       return false;
-    } catch (Exception $e) {
+    } catch (\Exception $e) {
       return array('success' => 0, 'message' => $e->getMessage());
     }
   }

@@ -36,6 +36,5 @@ function __models_autoload(string $model) {
 //------------------------------------------------
 
 # Activación del Firewall
-!FIREWALL ?: new Firewall;
+!FIREWALL ?: new \Ocrend\Core\Kernel\Firewall();
 
-?>

@@ -11,6 +11,7 @@ class ComposerStaticInit4bef0bfed467897190b073e3aeaca8bf
         'a0edc8309cc5e1d60e3047b5df6b7052' => __DIR__ . '/..' . '/guzzlehttp/psr7/src/functions_include.php',
         '37a3dc5111fe8f707ab4c132ef1dbc62' => __DIR__ . '/..' . '/guzzlehttp/guzzle/src/functions_include.php',
         '253c157292f75eb38082b5acb06f3f01' => __DIR__ . '/..' . '/nikic/fast-route/src/functions.php',
+        '6bc45d0537e6858fd179bdbc31d62c79' => __DIR__ . '/..' . '/raveren/kint/Kint.class.php',
     );
 
     public static $prefixLengthsPsr4 = array (
@@ -21,6 +22,15 @@ class ComposerStaticInit4bef0bfed467897190b073e3aeaca8bf
         'P' => 
         array (
             'Psr\\Http\\Message\\' => 17,
+        ),
+        'O' => 
+        array (
+            'Ocrend\\Views\\' => 13,
+            'Ocrend\\Core\\Models\\' => 19,
+            'Ocrend\\Core\\Kernel\\' => 19,
+            'Ocrend\\Core\\' => 12,
+            'Ocrend\\Api\\Http\\' => 16,
+            'Ocrend\\Api\\' => 11,
         ),
         'L' => 
         array (
@@ -41,6 +51,10 @@ class ComposerStaticInit4bef0bfed467897190b073e3aeaca8bf
         array (
             'FastRoute\\' => 10,
         ),
+        'A' => 
+        array (
+            'App\\Controllers\\' => 16,
+        ),
     );
 
     public static $prefixDirsPsr4 = array (
@@ -51,6 +65,30 @@ class ComposerStaticInit4bef0bfed467897190b073e3aeaca8bf
         'Psr\\Http\\Message\\' => 
         array (
             0 => __DIR__ . '/..' . '/psr/http-message/src',
+        ),
+        'Ocrend\\Views\\' => 
+        array (
+            0 => __DIR__ . '/../..' . '/views',
+        ),
+        'Ocrend\\Core\\Models\\' => 
+        array (
+            0 => __DIR__ . '/../..' . '/core/models',
+        ),
+        'Ocrend\\Core\\Kernel\\' => 
+        array (
+            0 => __DIR__ . '/../..' . '/core/kernel',
+        ),
+        'Ocrend\\Core\\' => 
+        array (
+            0 => __DIR__ . '/../..' . '/core',
+        ),
+        'Ocrend\\Api\\Http\\' => 
+        array (
+            0 => __DIR__ . '/../..' . '/api/http',
+        ),
+        'Ocrend\\Api\\' => 
+        array (
+            0 => __DIR__ . '/../..' . '/api',
         ),
         'League\\Plates\\' => 
         array (
@@ -81,6 +119,10 @@ class ComposerStaticInit4bef0bfed467897190b073e3aeaca8bf
         array (
             0 => __DIR__ . '/..' . '/nikic/fast-route/src',
         ),
+        'App\\Controllers\\' => 
+        array (
+            0 => __DIR__ . '/../..' . '/app/controllers',
+        ),
     );
 
     public static $prefixesPsr0 = array (
@@ -100,9 +142,17 @@ class ComposerStaticInit4bef0bfed467897190b073e3aeaca8bf
         ),
         'P' => 
         array (
+            'Psr\\Log\\' => 
+            array (
+                0 => __DIR__ . '/..' . '/psr/log',
+            ),
             'Pimple' => 
             array (
                 0 => __DIR__ . '/..' . '/pimple/pimple/src',
+            ),
+            'PayPal' => 
+            array (
+                0 => __DIR__ . '/..' . '/paypal/rest-api-sdk-php/lib',
             ),
         ),
     );

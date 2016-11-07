@@ -1,5 +1,6 @@
 <?php
-
+namespace Ocrend\Core\Kernel;
+use \PDO;
 # Seguridad
 defined('INDEX_DIR') OR exit('Ocrend software says .i.');
 
@@ -91,7 +92,7 @@ final class Conexion extends PDO {
         break;
       }
 
-    } catch (PDOException $e) {
+    } catch (\PDOException $e) {
       if(IS_API) {
         die(json_encode(array('success' => 0, 'message' => 'Error intentando conectar con la base de datos.')));
       } else {
@@ -111,7 +112,7 @@ final class Conexion extends PDO {
     *
     * @return arreglo asociativo
   */
-  final public function fetch_array(PDOStatement $query) : array {
+  final public function fetch_array(\PDOStatement $query) : array {
     return $query->fetchAll(PDO::FETCH_ASSOC);
   }
 
@@ -124,7 +125,7 @@ final class Conexion extends PDO {
     *
     * @return numero de filas encontradas
   */
-  final public function rows(PDOStatement $query) : int {
+  final public function rows(\PDOStatement $query) : int {
     return $query->rowCount();
   }
 
@@ -161,7 +162,7 @@ final class Conexion extends PDO {
     *
     * @return object PDOStatement
   */
-  final public function query(string $q) : PDOStatement {
+  final public function query(string $q) : \PDOStatement {
     try {
 
       if(DEBUG) {
@@ -169,7 +170,7 @@ final class Conexion extends PDO {
       }
 
       return parent::query($q);
-    } catch (Exception $e) {
+    } catch (\Exception $e) {
       $message = 'Error en la query: <b>' . $q . '<b/><br /><br />' . $e->getMessage();
       die(IS_API ? json_encode(array('success' => 0, 'message' => $message)) : $message);
     }
@@ -186,7 +187,7 @@ final class Conexion extends PDO {
     *
     * @return object PDOStatement
   */
-  final public function delete(string $table, string $where, string $limit = 'LIMIT 1') : PDOStatement {
+  final public function delete(string $table, string $where, string $limit = 'LIMIT 1') : \PDOStatement {
     return $this->query("DELETE FROM $table WHERE $where $limit;");
   }
 
@@ -201,7 +202,7 @@ final class Conexion extends PDO {
     *
     * @return object PDOStatement
   */
-  final public function insert(string $table, array $e) : PDOStatement {
+  final public function insert(string $table, array $e) : \PDOStatement {
     if (sizeof($e) == 0) {
       trigger_error('El arreglo pasado por $this->db->insert(...) está vacío.', E_ERROR);
     }
@@ -232,7 +233,7 @@ final class Conexion extends PDO {
     *
     * @return object PDOStatement
   */
-  final public function update(string $table, array $e, string $where, string $limit = '') : PDOStatement {
+  final public function update(string $table, array $e, string $where, string $limit = '') : \PDOStatement {
     if (sizeof($e) == 0) {
       trigger_error('El arreglo pasado por $this->db->update(...) está vacío.', E_ERROR);
     }

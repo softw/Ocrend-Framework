@@ -1,5 +1,9 @@
 <?php
-
+/*************************************************************
+ * Ocrend Framework
+ *
+ */
+namespace Ocrend\Core\Kernel;
 # Seguridad
 defined('INDEX_DIR') OR exit('Ocrend software says .i.');
 

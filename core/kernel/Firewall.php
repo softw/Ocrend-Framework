@@ -1,5 +1,6 @@
 <?php
-
+namespace Ocrend\Core\Kernel;
+use Ocrend\Core\Models\Func;
 # Seguridad
 defined('INDEX_DIR') OR exit('Ocrend software says .i.');
 
@@ -95,7 +96,7 @@ final class Firewall {
     *
     * @param string $s: index de la variable a sanar
     *
-    * @return retorna $r sanada
+    * @return  $r sanada
   */
   private function getEnv(string $s) {
 
@@ -117,7 +118,7 @@ final class Firewall {
   /**
     * Obtiene dirección de la página que emplea el agente de usuario para la pagina actual
     *
-    * @return devuelve $_SERVER['HTTP_REFERER'] sanado
+    * @return $_SERVER['HTTP_REFERER'] sanado
   */
   private function getReferer() {
     return $this->getEnv('HTTP_REFERER');

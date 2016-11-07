@@ -83,7 +83,7 @@ final class Debug {
     # Fin de test de velocidad
     $endtime = explode(" ",microtime());
     $endtime = $endtime[0] + $endtime[1];
-    $memory = Func::convert(memory_get_usage());
+    $memory = \Ocrend\Core\Models\Func::convert(memory_get_usage());
     //------------------------------------------------
 
     echo self::HEAD;

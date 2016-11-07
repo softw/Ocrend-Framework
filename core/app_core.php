@@ -27,7 +27,6 @@ require('core/config.php');
 
 # Implementación de autoloaders
 require('core/kernel/Ocrend.php');
-require('vendor/autoload.php');
 
 //------------------------------------------------
 
@@ -41,6 +40,6 @@ if(DEBUG) {
 //------------------------------------------------
 
 # Router para URL's amigables
-$router = new Router;
+$router = new \Ocrend\Core\Kernel\Router();
 
-?>
+
