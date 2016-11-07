@@ -22,7 +22,7 @@ final class Debug {
     -moz-border-radius: 4px;
     -webkit-border radius: 4px;
     display: block;
-    font-size: 12.05px;
+    font-size: 12px;
     white-space: pre-wrap;
     word-wrap: break-word;
     color: #333;
@@ -90,6 +90,7 @@ final class Debug {
 
     //------------------------------------------------
     echo '<b class="cab">Archivo:</b> "' , $_SERVER['PHP_SELF'], '"<br />';
+    echo '<b class="cab">Url:</b> "' , $_SERVER['REQUEST_URI'], '"<br />';
     echo '<b class="cab">PHP:</b> ', phpversion(), '<br />';
     echo '<b class="cab">FRAMEWORK:</b> ', VERSION , '<br />';
     echo '<strong class="cab">Controller: </strong> ', $router->getController() ,'<br />';
@@ -155,4 +156,4 @@ final class Debug {
 
 }
 
-?>
+

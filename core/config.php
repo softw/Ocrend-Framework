@@ -50,12 +50,12 @@ define('DATABASE', array(
   * @example "/" si para acceder al framework colocamos http://url.com en la URL, ó http://localhost
   * @example "/Ocrend-Framework/" si para acceder al framework colocamos http://url.com/Ocrend-Framework, ó http://localhost/Ocrend-Framework/
 */
-define('__ROOT__', '/Ocrend-Framework/');
+define('__ROOT__', '/');
 
 //------------------------------------------------
 
 # Constantes fundamentales
-define('URL', 'http://localhost/Ocrend-Framework/');
+define('URL', 'ocrend.dev');
 define('APP', 'Ocrend Framework');
 
 //------------------------------------------------
@@ -95,11 +95,10 @@ define('FIREWALL', true);
 //------------------------------------------------
 
 # Activación del DEBUG, solo para desarrollo
-define('DEBUG', false);
+define('DEBUG', true);
 
 //------------------------------------------------
 
 # Versión actual del framework
 define('VERSION', '1.1.2');
 
-?>

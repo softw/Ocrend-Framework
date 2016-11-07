@@ -1,4 +1,8 @@
 <?php
+/***********************************************************************+
+ * Ocrend-Framework
+ * Licence MIT
+ */
 
 # Seguridad
 
@@ -10,7 +14,9 @@ class Router {
 
   //------------------------------------------------
 
+
   public $dir = __ROOT__;
+  private $defaultController = 'homeController';
   private $url = null;
   private $controller = null;
   private $method = null;
@@ -37,25 +43,56 @@ class Router {
   public function __construct() {
 
     Helper::load('strings');
-    $this->url = urldecode(parse_url($_SERVER['REQUEST_URI'], PHP_URL_PATH));
-
-    if($this->dir == '/' and strlen($this->url) > strlen($this->dir)) {
-      $this->url[0] = '';
-    } else {
-      $this->url = explode($this->dir,$this->url);
-      $this->url = $this->url[1];
-    }
-
+    $this->url = $this->resolveUrl();
     if(!empty($this->url) and $this->url != $this->dir) {
       $this->url = explode('/',$this->url);
-
-      $this->controller = Strings::alphanumeric($this->url[0]) ? strtolower( $this->url[0] ) . 'Controller' : 'homeController';
-      $this->method = array_key_exists(1,$this->url) ? $this->url[1] : null;
-      $this->id = array_key_exists(2,$this->url) ? $this->url[2] : null;
+      $this->controller = $this->resolveController();
+      $this->method = $this->resolveMethod();
+      $this->id = $this->resolveId();
     } else {
-      $this->controller = 'homeController';
+      $this->controller = $this->defaultController;
     }
 
+  }
+
+  /**
+   * @return string
+   */
+  private function resolveController()
+  {
+    return Strings::alphanumeric($this->url[0]) ? strtolower( $this->url[0] ) . 'Controller' : 'homeController';
+  }
+
+  /**
+   * @return string
+   */
+  private function resolveMethod()
+  {
+    return array_key_exists(1,$this->url) ? $this->url[1] : null;
+  }
+
+  /**
+   * @return string
+   */
+  private function resolveId()
+  {
+    return array_key_exists(2,$this->url) ? $this->url[2] : null;
+  }
+
+  /**
+   * @return array|string
+   */
+  private function resolveUrl()
+  {
+    $url = urldecode(parse_url($_SERVER['REQUEST_URI'], PHP_URL_PATH));
+
+    if($this->dir == '/' and strlen($url) >= strlen($this->dir)) {
+      $url[0] = '';
+    } else {
+      $url = explode($this->dir,$this->url);
+      $url = $url[1];
+    }
+    return $url;
   }
 
   //------------------------------------------------
@@ -108,7 +145,7 @@ class Router {
     *
     * @param string $name: Nombre de la ruta
     *
-    * @return contenido de la ruta o null si no cumple la regla definida con setRoute() para esa ruta
+    * @return string contenido de la ruta o null si no cumple la regla definida con setRoute() para esa ruta
   */
   public function getRoute(string $name) {
 
@@ -142,4 +179,4 @@ class Router {
 
 }
 
-?>
+
